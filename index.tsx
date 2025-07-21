@@ -5,12 +5,11 @@
  */
 
 import { definePluginSettings } from "@api/Settings";
-import { makeRange } from "@components/PluginSettings/components/SettingSliderComponent";
 import { Devs } from "@utils/constants";
 import { sleep } from "@utils/misc";
-import definePlugin, { OptionType } from "@utils/types";
+import definePlugin, { makeRange, OptionType } from "@utils/types";
+import { Message, ReactionEmoji } from "@vencord/discord-types";
 import { RelationshipStore, SelectedChannelStore, UserStore } from "@webpack/common";
-import { Message, ReactionEmoji } from "discord-types/general";
 
 interface IMessageCreate {
     type: "MESSAGE_CREATE";
@@ -40,10 +39,8 @@ interface IVoiceChannelEffectSendEvent {
 }
 
 const MOYAI = "🗿";
-const MOYAI_URL =
-    "https://raw.githubusercontent.com/KrstlSkll69/moyai/main/soundeffects/plugins_moyai_moyai.mp3";
-const MOYAI_URL_HD =
-    "https://raw.githubusercontent.com/KrstlSkll69/moyai/main/soundeffects/plugins_moyai_moyai_hd.wav";
+const MOYAI_URL = "https://github.com/Equicord/Equibored/raw/main/sounds/moyai/moyai.mp3";
+const MOYAI_URL_HD = "https://github.com/Equicord/Equibored/raw/main/sounds/moyai/moyai.wav";
 
 const settings = definePluginSettings({
     volume: {
